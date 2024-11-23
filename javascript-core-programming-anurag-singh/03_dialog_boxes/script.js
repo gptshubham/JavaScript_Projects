@@ -2,5 +2,5 @@
 
 // const isConfirmed = confirm("Would you like to proceed?");
 
-const username = prompt("Enter your name: ");
-console.log(username);
+// const username = prompt("Enter your name: ");
+// console.log(username);
