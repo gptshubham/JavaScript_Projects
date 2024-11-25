@@ -1,9 +1,10 @@
 // Decision Making in JavaScript
 
 // In this session, we have covered
-// --> if-else statements
-// --> else-if statements
-// --> nested if-else statements
+// --> if-else statements,
+// --> else-if statements,
+// --> nested if-else statements and
+// --> ternary operator
 
 // 0 < age < 5 ==> Kid
 // 5 <= age <= 17 ==> School Student
@@ -22,7 +23,7 @@ console.log(`Name: ${username}`)
 console.log(`Age: ${userAge}`)
 
 // Condition 0 : Kid
-if (userAge > 0 && userAge < 5) {
+if (userAge > 0 && userAge <= 4) {
   console.log(`${username} is a Kid`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
     console.log(`And he is playing.`)
@@ -33,7 +34,7 @@ if (userAge > 0 && userAge < 5) {
 }
 
 // Condition 1 : School Student
-if (5 < userAge && userAge <= 17) {
+if (5 <= userAge && userAge <= 17) {
   console.log(`${username} is a school student.`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
     console.log(`And he loves mathematics.`)
@@ -55,7 +56,7 @@ if (18 <= userAge && userAge <= 24) {
 }
 
 // Condition 3
-if (25 < userAge && userAge < 60) {
+if (25 <= userAge && userAge < 60) {
   console.log(`${username} is a working professional.`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
     console.log(`And she is a web developer.`)
@@ -91,14 +92,14 @@ console.log(`Name : ${username}`)
 console.log(`Age : ${userAge}`)
 
 // Condition 0 : User is a kid
-if (userAge > 0 && userAge < 5) {
+if (userAge > 0 && userAge <= 4) {
   console.log(`${username} is a Kid`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
     console.log(`And he is playing.`)
   } else {
     console.log(`And she is playing.`)
   }
-} else if (5 < userAge && userAge <= 17) {
+} else if (5 <= userAge && userAge <= 17) {
   // Condition 1 : User is a School Student
   console.log(`${username} is a school student.`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
@@ -114,7 +115,7 @@ if (userAge > 0 && userAge < 5) {
   } else {
     console.log(`And she is learning computer science.`)
   }
-} else if (25 < userAge && userAge < 60) {
+} else if (25 <= userAge && userAge < 60) {
   // Condition 3 : User is a Working Professional
   console.log(`${username} is a working professional.`)
   if (userGender.trim().toLocaleLowerCase() == 'male') {
@@ -151,4 +152,34 @@ if (a >= b && a >= c) {
 } else {
   console.log(c)
 }
+*/
+
+// Ternary Operator --> very popular, widely used
+
+// // syntax
+// const result = true ? 'Shubham' : 'ProCoderr'
+// console.log(result)
+// const result1 = false ? 'Shubham' : 'ProCoderr'
+// console.log(result1)
+
+// Example : typing user message based on his/her gender.
+/*
+const gender = 'F'
+const userMessage = `${
+  gender.toLocaleLowerCase() === 'f' ? 'She' : 'He'
+} is a college student.`
+console.log(userMessage)
+
+// nested ternary operator
+const result = 0 ? 'Shubham' : '' ? 12 : 0
+console.log(result)
+*/
+
+// Program : largest of the three numbers
+/*
+const a = 5
+const b = 6
+const c = 8
+const largest = a >= b && a >= c ? a : b >= c ? b : c
+console.log(largest)
 */
