@@ -2,10 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: darkorange;
 }
+
 h1 {
-  text-align: center;
   color: white;
-  margin-top: 1rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(196, 192, 188);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.operators {
+  height: 50px;
+  width: 360px;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
