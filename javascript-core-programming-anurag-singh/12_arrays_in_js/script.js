@@ -199,3 +199,28 @@ console.log(splicedArray)
 temp = newAnimals.splice(1, 2, 'Elephant', 'Beer')
 console.log(temp)
 console.log(newAnimals)
+
+// Multi-Dimensional Array
+
+// 2D Array
+const nameAndNumberList = [
+  ['Shubham', 80],
+  ['Abhi', 85],
+  ['Mohit', 90],
+  ['Adarsh', 70],
+  ['Akash', 75],
+]
+
+console.log(nameAndNumberList[0])
+console.log(nameAndNumberList[nameAndNumberList.length - 1])
+console.log(nameAndNumberList[1][1])
+
+const ticTacToe = [
+  ['X', null, null],
+  [null, null, 'O'],
+  ['O', null, 'X'],
+]
+
+console.log(ticTacToe[0])
+console.log(ticTacToe[1])
+console.log(ticTacToe[2])
