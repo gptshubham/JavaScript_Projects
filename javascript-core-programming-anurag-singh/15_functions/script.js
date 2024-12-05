@@ -85,3 +85,35 @@ console.log(result);
 
 result = maths.cube(2);
 console.log(result);
+
+// Arrow Functions
+
+// // Function Declaration
+// function square(num) {
+//   return num * num;
+// }
+
+// // Function Expression - Anonymous Function
+// const square = function(num) {
+//   return num * num
+// }
+
+// Arrow Function Expression
+
+// const square = (num) => {
+//   return num * num;
+// };
+
+// const square = (num) => num * num; // Implicit Return
+const square = (num) => {
+  return num * num; // Explicit Return
+};
+// we don't even need to use () in case of single argument, however Prettier doesn't allow that to maintain uniformity throughout the code
+console.log(square(4));
+
+// Commonly used as callback function --> A combination of anonymous and arrow functions
+const delayedSquare = setTimeout(() => console.log('Hi!'), 2000);
+
+// Program: Generating a random number between 1 and 10
+const random = () => Math.floor(Math.random() * 10 + 1);
+console.log(random());
