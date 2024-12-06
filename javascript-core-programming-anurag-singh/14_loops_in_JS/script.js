@@ -1,5 +1,6 @@
-'use strict'
+'use strict';
 /* while Loop */
+
 /*
 // Program: printing count from 1 to 100
 
@@ -43,6 +44,7 @@ console.log('Program Ended')
 */
 
 /* for loop */
+
 /*
 // Program: printing count from 1 to 10
 
@@ -69,7 +71,9 @@ for (let i = 0; i < 100; i++) {
 }
 */
 
-// Do While Loop in JS --> (Rarely Used)
+/* Do While Loop in JS --> (Rarely Used) */
+
+/*
 console.log('Program Starts...')
 
 // debugger
@@ -84,15 +88,21 @@ console.log('Program Ended...')
 // used when you must execute the loop at least once
 
 // Note: for loop is mostly used
+*/
 
 // Write JavaScript code that calculates the sum of all the numbers from 1 to 1000 inclusive and prints the result.
+
+/*
 let sum = 0
 for (let i = 0; i < 1000; i++) {
   sum += i + 1
 }
 console.log(sum)
+*/
 
 // Write JavaScript code that finds the maximum number in an array of numbers [5, 10, 2, 8, 15] and prints the result.
+
+/*
 let arr = [5, 10, 2, 8, 15]
 let max = arr[0]
 for (let i = 0; i < arr.length; i++) {
@@ -101,33 +111,39 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 console.log(max)
+*/
 
 // Write JavaScript code that takes a string "hello" as input and prints the string reversed ("olleh") using a for loop.
 
+/*
 let str = 'hello'
 let reversedString = ''
 for (let i = str.length - 1; i >= 0; i--) {
   reversedString += str[i]
 }
 console.log(reversedString)
+*/
 
 // Write JavaScript code that counts the number of vowels (a, e, i, o, u) in a string "javascript" and prints the result.
 
+/*
 let vowels = 'aeiou'
 
 let js = 'javascript'
 
 let count = 0
 
-for (i of js) {
+for (let i of js) {
   if (vowels.includes(i)) {
     count++
   }
 }
 console.log(count)
+*/
 
 // Write JavaScript code that prints the Fibonacci sequence up to the 10th term.
 
+/*
 let prev = 1
 let secondPrev = 0
 
@@ -138,8 +154,11 @@ for (let i = 0; i < 10; i++) {
   prev = next
   secondPrev = temp
 }
+*/
 
 // Write JavaScript code that checks whether a given number is a prime number or not. Print "Prime" if it's a prime number, otherwise print "Not Prime".
+
+/*
 let num = 17
 if (num < 2) {
   console.log(`Not Prime`)
@@ -158,9 +177,11 @@ if (num < 2) {
     console.log(`Prime`)
   }
 }
+*/
 
 // Write JavaScript code that generates a random password of length 8 consisting of uppercase letters, lowercase letters, and numbers. (Hint: You can use the Math.random() function to generate random numbers and convert them to characters.)
 
+/*
 // creating Alphabets object
 let alphabets = {}
 for (let i = 1; i <= 26; i++) {
@@ -185,9 +206,11 @@ for (let i = 0; i < 8; i++) {
 }
 console.log(password)
 console.log(password.length)
+*/
 
 // Write JavaScript code that prints all the prime numbers between 1 and 100.
 
+/*
 for (let i = 2; i <= 100; i++) {
   if (i === 2) {
     console.log(i)
@@ -204,12 +227,116 @@ for (let i = 2; i <= 100; i++) {
     }
   }
 }
+*/
 
 // Write JavaScript code that calculates the factorial of a given number. (The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.)
 
+/*
 let n = 6
 let factorial = 1
-for (i = 1; i <= n; i++) {
+for (let i = 1; i <= n; i++) {
   factorial *= i
 }
 console.log(factorial)
+*/
+
+/* for of loop */
+
+/*
+const fruits = ['apple', 'banana', 'peach', 'mango', 'grapes', 'kiwi'];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+console.log('------');
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+// const is creating a new variable at every iteration
+
+console.log('------');
+
+const user = 'Shubham';
+for (let letter of user) {
+  console.log(letter);
+}
+*/
+
+/* for in loop - used to iterate over Objects (performance heavy) */
+
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 20,
+  gender: 'Male',
+  eyeColor: 'Red',
+  city: 'Zombie Land',
+};
+
+for (let key in person) {
+  console.log(key, '-', person[key]);
+}
+
+console.log('--------------------');
+
+// How to iterate over objects using for of loop (Better Performance)
+
+const personKeys = Object.keys(person);
+console.log(personKeys);
+
+// debugger;
+for (let key of personKeys) {
+  console.log(person[key]);
+}
+
+const personValues = Object.values(person);
+console.log(personValues);
+
+const personEntries = Object.entries(person);
+console.log(personEntries);
+
+console.log(personEntries[0][1]);
+console.log(personEntries[1][1]);
+
+// Program: You are working on a JavaScript program where you have an object representing student information. The object student contains various properties such as name, age, and grade.Your task is to write a JavaScript code snippet using the for...in loop to iterate over each property of the student object and concatenate the property names into a string separated by commas.
+
+/*
+const student = {
+  name: 'John Doe',
+  age: 20,
+  grade: 'A',
+};
+
+let properties = '';
+
+for (let property in student) {
+  properties += property + ',';
+}
+
+console.log(properties);
+*/
+
+// Program: Write a program to print all the keys and values of the below object.
+
+/*
+const student = {
+  name: 'John Doe',
+  age: 20,
+  grade: 'A',
+};
+
+// i. Using for...of loop along with Object.entries()
+const studentEntries = Object.entries(student);
+
+for (let entry of studentEntries) {
+  console.log(entry[0], ':', entry[1]);
+}
+
+// ii. Using for...in loop
+
+for (let key in student) {
+  console.log(key, ':', student[key]);
+}
+*/
