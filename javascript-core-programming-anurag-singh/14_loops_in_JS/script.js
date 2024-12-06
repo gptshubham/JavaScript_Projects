@@ -266,6 +266,7 @@ for (let letter of user) {
 
 /* for in loop - used to iterate over Objects (performance heavy) */
 
+/*
 const person = {
   firstName: 'John',
   lastName: 'Doe',
@@ -299,6 +300,7 @@ console.log(personEntries);
 
 console.log(personEntries[0][1]);
 console.log(personEntries[1][1]);
+*/
 
 // Program: You are working on a JavaScript program where you have an object representing student information. The object student contains various properties such as name, age, and grade.Your task is to write a JavaScript code snippet using the for...in loop to iterate over each property of the student object and concatenate the property names into a string separated by commas.
 
@@ -340,3 +342,71 @@ for (let key in student) {
   console.log(key, ':', student[key]);
 }
 */
+
+// foreach Array Method
+
+const fruits = ['apple', 'banana', 'peach', 'mango', 'grapes', 'kiwi'];
+
+// anonymous function as an argument
+fruits.forEach(function (fruit) {
+  console.log(fruit);
+});
+
+console.log('-----');
+
+// array function as an argument --> (most common)
+fruits.forEach((fruit) => console.log(fruit));
+
+console.log('-----');
+
+// named function as an argument --> (not so common)
+function logIt(el) {
+  console.log(el);
+}
+
+fruits.forEach(logIt);
+
+// Program: Using the forEach loop, write a JavaScript code snippet to calculate the sum of all the numbers in the array.
+
+const numbers = [1, 2, 3, 4, 5];
+
+let sum = 0
+numbers.forEach(number => sum += number)
+console.log(sum);
+
+// Program: Given an array of strings, use the forEach method to count the number of times each string appears and store the result in an object.
+
+const fruits1 = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const fruitCount = {};
+
+// Your code here
+// fruits1.forEach(function(fruit) {
+//   if(fruit in fruitCount) {
+//     fruitCount[fruit] += 1
+//   } 
+//   else {
+//     fruitCount[fruit] = 1
+//   }
+// })
+
+// ternary operator
+fruits1.forEach(function (fruit) {
+  fruit in fruitCount ? fruitCount[fruit] += 1 : fruitCount[fruit] = 1
+})
+console.log(fruitCount);
+
+// Expected Output: { apple: 3, banana: 2, orange: 1 }
+
+// Given an array of strings, use the forEach method to find the sum of the lengths of all strings in the array.
+
+const fruits2 = ['apple', 'banana', 'cherry'];
+
+let totalLength = 0;
+
+// Your code here
+fruits2.forEach(fruit => totalLength += fruit.length)
+
+console.log(totalLength);
+
+//Expected Output: 17
