@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(245, 139, 10);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: cursive;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+li {
+  text-align: center;
+  font-size: 2rem;
+}
