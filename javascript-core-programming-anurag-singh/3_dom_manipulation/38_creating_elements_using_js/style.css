@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+body {
+  padding-bottom: 20px;
+}
+
+.container {
+  color: green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+img {
+  width: 60px;
+}
+
+.box {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 0;
+}
