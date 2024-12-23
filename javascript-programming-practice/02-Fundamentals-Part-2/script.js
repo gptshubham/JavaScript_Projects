@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // activating Strict Mode
 
 /*
@@ -164,7 +164,7 @@ console.log(yearsLeftTillRetirement(2002, 2024));
 console.log(yearsLeftTillRetirement(1960, 2024));
 */
 
-/* Arrays */
+/* Arrays - used for more ordered data */
 /*
 // The Literal Syntax - More usual way
 const canProgram = ["Python", "JavaScript", "Rust", "C++"];
@@ -243,7 +243,9 @@ console.log(ageArray);
 // Basic Array Methods
 /*
 // Adding Elements to the array
+
 // push --> adds elements to the end of the array
+
 const programingLanguages = ["Python", "JavaScript", "Rust"];
 
 console.log(programingLanguages);
@@ -252,26 +254,33 @@ console.log(programingLanguages.push("Java"));
 // const newLenghth = programingLanguages.push("Rust");
 console.log(programingLanguages);
 
-// shift --> adds elements at the beginning of the array
+// unshift --> adds elements at the beginning of the array
+
 let newLength = programingLanguages.unshift("C++");
 console.log(newLength);
 console.log(programingLanguages);
 
 // Removing Elements of the array
+
 // pop --> removes the element fromt the last
+
 const popped = programingLanguages.pop();
 console.log(popped);
 console.log(programingLanguages);
-// shift --> removes element form the front
+
+// shift --> removes element form the beginning
+
 const shifted = programingLanguages.shift();
 console.log(shifted);
 console.log(programingLanguages);
 
 // finding index position of a particular element in the array : indexof
+
 let indexPosition = programingLanguages.indexOf("Rust");
 console.log(indexPosition);
 
 // checking if an element is present in the array : includes --> (checks Strict Equality)
+
 let isPresent = programingLanguages.includes("JavaScript");
 console.log(isPresent);
 isPresent = programingLanguages.includes("Java");
@@ -283,3 +292,206 @@ if (programingLanguages.includes("JavaScript")) {
   console.log(`You can program in JavaScript.`);
 }
 */
+
+/* Objects -- used for more unstructured data */
+/*
+const shubhamArray = [
+  'Shubham',
+  'Gupta',
+  2024 - 2002,
+  'Programmer',
+  ['Pytho', 'JavaScript', 'Rust'],
+];
+
+// Object Literal Syntax
+const shubhamObject = {
+  firstName: 'Shubham',
+  lastName: 'Gupta',
+  age: 2024 - 2002,
+  job: 'Programmer',
+  programmingLanguages: ['Python', 'JavaScript', 'Rust'],
+};
+
+// Dot vs Bracket Notation
+
+console.log(shubhamObject);
+
+console.log(shubhamObject.lastName);
+
+console.log(shubhamObject['lastName']);
+
+const nameKey = "Name";
+
+console.log(shubhamObject['first' + nameKey]);  // more common
+console.log(shubhamObject['last' + nameKey]);
+
+const interestedIn = prompt("What do you want to know about Shubham? Choose between firstName, lastName, age, job, and programmingLanguages");
+
+console.log(shubhamObject.interestedIn);  // undefined
+console.log(shubhamObject[interestedIn]); 
+
+if (shubhamObject[interestedIn]) {
+  console.log(shubhamObject[interestedIn]);
+} else {
+  console.log("Wrong request! Choose between firstName, lastName, age, job, and programmingLanguages");
+};
+
+// Adding New Properties
+
+// using Dot Notation
+
+shubhamObject.location = 'Bengaluru';
+console.log(shubhamObject);
+console.log();
+
+// using brackets
+
+shubhamObject['salary'] = 50000;
+console.log(shubhamObject);
+console.log();
+
+// Exercise: "Shubham knows 3 programmign languages, and he has best command over Python"
+console.log(
+  `${shubhamObject.firstName} knows ${shubhamObject.programmingLanguages.length} programming languages, and he has best command over ${shubhamObject.programmingLanguages[0]}.`
+);
+*/
+
+/* Object Methods */
+
+const shubhamObject = {
+  firstName: 'Shubham',
+  lastName: 'Gupta',
+  birthYear: 2002,
+  job: 'Programmer',
+  programmingLanguages: ['Python', 'JavaScript', 'Rust'],
+  hasDriversLicense: true,
+  // function as key-value pair
+  // Method 1:
+  // calcAge: function(birthYear) {
+  //   return 2024 - birthYear;
+  // }
+  // Method 2:
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2024 - this.birthYear;
+  // },
+  // Method 3: (Preferred)
+  calcAge: function () {
+    // creating a key-value pair out of function output - Method 3 (Preferred)
+    this.age = 2024 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    this.summary = `${this.firstName} is a ${this.calcAge()} years old ${
+      this.job
+    } and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`;
+  },
+};
+
+// // accessing fucntion property of object
+
+// // calling fucntion from object and assinging the value as key-value pair back to the object itselt - Method 1
+// shubhamObject['age'] = shubhamObject.calcAge();
+// console.log(shubhamObject.age);
+
+// // calling function form the object and assigning the value as key-value pair back to the object itself - Method 2
+// shubhamObject.age2 = shubhamObject['calcAge']();
+// console.log(shubhamObject.age2);
+
+// // Method 3
+// console.log(shubhamObject.calcAge());
+// console.log(shubhamObject.age);
+
+// // Exercise: getSummary function within shubhamObject
+// shubhamObject.getSummary();
+// console.log(shubhamObject.summary);
+
+// Loops - for loops
+
+// // for loop keeps running while the condition is TRUE
+// for (let rep = 5; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}.`);
+// }
+
+// Looping through Arrays
+
+const shubham = [
+  'Shubham',
+  'Gupta',
+  2024 - 2002,
+  'Programmer',
+  ['Pytho', 'JavaScript', 'Rust'],
+];
+
+// for in loop
+for (let item in shubham) {
+  console.log(item, ' : ', shubham[item]);
+}
+
+// for of loop
+for (let item of shubham) {
+  console.log(item);
+}
+
+// Nested Loop
+
+// nested for in loop
+let types = [];
+for (let i in shubham) {
+  types[i] = typeof shubham[i];
+  if (typeof shubham[i] === 'object') {
+    for (let j in shubham[i]) {
+      console.log(shubham[i][j]);
+    }
+  }
+}
+console.log();
+console.log(types);
+console.log();
+
+// nested for of loop
+types = [];
+for (let i of shubham) {
+  types.push(typeof i);
+  if (typeof i === 'object') {
+    for (let j of i) {
+      console.log(j);
+    }
+  }
+}
+console.log();
+console.log(types);
+console.log();
+
+// Example: calculate ages for all the birth years
+
+const years = [1991, 2008, 1947, 2020];
+
+const currentYear = 2024;
+
+let ages = [];
+
+for (let year of years) {
+  ages.push(currentYear - year);
+}
+console.log(ages);
+
+// continue
+console.log('---ONLY STRING---');
+for (let i in shubham) {
+  if (typeof shubham[i] != 'string') {
+    continue;
+  } else {
+    console.log(shubham[i]);
+  }
+}
+
+// break
+console.log('---BREAK WITH NUMBER---');
+for (let i in shubham) {
+  if (typeof shubham[i] === 'number') {
+    break;
+  } else {
+    console.log(shubham[i]);
+  }
+}
